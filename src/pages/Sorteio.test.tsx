@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { RecoilRoot } from "recoil";
 import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
-import { Sorteio } from "./Sorteio";
+import  Sorteio  from "./Sorteio";
 import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio";
 
 jest.mock("../state/hooks/useListaDeParticipantes", () => {
