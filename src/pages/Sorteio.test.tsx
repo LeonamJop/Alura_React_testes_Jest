@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { RecoilRoot } from "recoil";
 import { useListaDeParticipantes } from "../state/hooks/useListaDeParticipantes";
-import  Sorteio  from "./Sorteio";
+import  Sorteio  from "../pages/Sorteio";
 import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio";
 
 jest.mock("../state/hooks/useListaDeParticipantes", () => {
@@ -39,7 +39,7 @@ describe("na pagina de sorteio", () => {
     );
 
     const opcoes = screen.queryAllByRole("option");
-    expect(opcoes).toHaveLength(participantes.length);
+    expect(opcoes).toHaveLength(participantes.length + 1);
   });
 
   test("o amigo secreto é exibido quando solicitado", () => {

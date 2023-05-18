@@ -6,6 +6,8 @@ import { useResultadoDoSorteio } from "../state/hooks/useResultadoDoSorteio"
 
 import './Sorteio.css'
 
+import aviao from '../imagens/aviao.png'
+
 const Sorteio = () => {
 
     const participantes = useListaDeParticipantes()
@@ -13,7 +15,7 @@ const Sorteio = () => {
     const [participanteDaVez, setParticipanteDaVez] = useState('')
     const [amigoScreto, setAmigoSecreto] = useState('')
 
-    const resultado = useResultadoDoSorteio()
+    const resultado:any = useResultadoDoSorteio()
 
     const sortear = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
@@ -34,14 +36,15 @@ const Sorteio = () => {
                     value={participanteDaVez}
                     onChange={evento => setParticipanteDaVez(evento.target.value)}
                 >
-                    {participantes.map(participante => <option key={participante}>{participante}</option>)}
+                    <option>Selecione seu nome</option>
+                    {participantes.map((participante: any) => <option key={participante}>{participante}</option>)}
                 </select>
                 <p>Clique em sortear para ver quem é seu amigo secreto!</p>
                 <button className="botao-sortear">Sortear</button>
             </form>
             {amigoScreto && <p className="resultado" role="alert">{amigoScreto}</p>}
             <footer className="sorteio">
-                <img src="/imagens/aviao.png" className="aviao" alt="Um desenho de um avião de papel" />
+                <img src={aviao} className="aviao" alt="Um desenho de um avião de papel" />
             </footer>
         </section>
     </Card>)

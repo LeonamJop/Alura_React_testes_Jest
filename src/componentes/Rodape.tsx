@@ -18,8 +18,8 @@ export const Rodape = () => {
   };
 
   return (
-    <footer>
-      <button disabled={participantes.length < 3} onClick={iniciar}>
+    <footer className="rodape-configuracoes">
+      <button className="botao" disabled={participantes.length < 3} onClick={iniciar}>
         Iniciar brincadeira
       </button>
     </footer>

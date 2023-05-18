@@ -27,8 +27,11 @@ exports[`a pagina de configuracao deve ser renderizada corretamente 1`] = `
         
       </form>
       <ul />
-      <footer>
+      <footer
+        class="rodape-configuracoes"
+      >
         <button
+          class="botao"
           disabled=""
         >
           Iniciar brincadeira
